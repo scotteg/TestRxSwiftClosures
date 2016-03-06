@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E56a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestRxSwiftClosures" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjj-CM-aYB">
+                                <rect key="frame" x="275" y="285" width="51" height="30"/>
+                                <state key="normal" title="Tap Me"/>
+                                <connections>
+                                    <segue destination="6YH-B9-Ng2" kind="popoverPresentation" popoverAnchorView="sjj-CM-aYB" id="Gr7-Db-hPG">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sjj-CM-aYB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZQF-Fq-Wy4"/>
+                            <constraint firstItem="sjj-CM-aYB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xhC-YM-4pE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="1DX-3t-kkb">
+            <objects>
+                <viewController id="6YH-B9-Ng2" customClass="DetailViewController" customModule="TestRxSwiftClosures" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DAh-c0-gri"/>
+                        <viewControllerLayoutGuide type="bottom" id="M82-Nm-DI7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FNx-b5-qi5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uA7-HM-j0w">
+                                <rect key="frame" x="250" y="271" width="100" height="97"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLv-CE-Xiq">
+                                        <rect key="frame" x="32" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <segue destination="FuR-jg-z8G" kind="unwind" unwindAction="unwindToDetail:" id="MZ3-Wj-RlE"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wT4-O6-ZQc">
+                                        <rect key="frame" x="0.0" y="38" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="OUf-lq-bk9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-fu-OTg">
+                                        <rect key="frame" x="29" y="76" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uA7-HM-j0w" firstAttribute="centerY" secondItem="FNx-b5-qi5" secondAttribute="centerY" id="cos-hE-F1X"/>
+                            <constraint firstItem="uA7-HM-j0w" firstAttribute="centerX" secondItem="FNx-b5-qi5" secondAttribute="centerX" id="gCO-Fi-AUS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bXn-je-AFz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="b2D-be-XCL">
+                            <connections>
+                                <segue destination="FuR-jg-z8G" kind="unwind" unwindAction="unwindToDetail:" id="CuN-QA-nd8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="wT4-O6-ZQc" id="EXf-A7-KV2"/>
+                        <outlet property="textFieldLabel" destination="qUR-fu-OTg" id="545-Eb-HsI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mii-T8-cw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FuR-jg-z8G" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="587"/>
+        </scene>
+    </scenes>
+</document>
