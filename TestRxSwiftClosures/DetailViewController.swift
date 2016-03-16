@@ -53,8 +53,11 @@ class DetailViewController: UIViewController {
     textField.rx_text.asDriver().driveNext { [weak self] text in
       Async.main(after: 5.0) {
         print("text = \(text)")
-        self?.someValue = text
-        self?.textFieldLabel.text = text
+        
+        guard let strongSelf = self else { return }
+        
+        strongSelf.someValue = text
+        strongSelf.textFieldLabel.text = text
       }
       
       }.addDisposableTo(disposeBag)
